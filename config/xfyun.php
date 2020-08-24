@@ -2,6 +2,9 @@
 
 return [
     'tts' => [
+        'api_key' => 'xxxxxxxxxx',
+        'api_secret' => 'xxxxxxxxxx',
+        'app_id' => 'xxxxxx',
         'business'      => [
             'aue'    => 'raw',
             'auf'    => 'audio/L16;rate=16000',

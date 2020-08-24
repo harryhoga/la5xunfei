@@ -104,7 +104,7 @@ class HttpTools
       $build = false;
     } elseif (is_object($value) && isset($value->datatype) && $value->datatype === 'MY_CURL_FILE') {
       $build = false;
-      $mycurl = new \ChenJiaJing\WeWork\MyCurlFile((array)$value);
+      $mycurl = new \Hoga\la5xunfei\Contracts\MyCurlFile((array)$value);
       $data[$key] = $mycurl->get();
       array_push(CacheTools::$cache_curl, $mycurl->tempname);
     } elseif (is_string($value) && class_exists('CURLFile', false) && stripos($value, '@') === 0) {
