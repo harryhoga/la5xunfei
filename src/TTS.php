@@ -1,5 +1,7 @@
 <?php
 
+use Hoga\la5xunfei\Contracts\BaseXunFeiYun;
+
 namespace Hoga\la5xunfei;
 
 class TTS extends BaseXunFeiYun

@@ -1,6 +1,6 @@
 <?php
 
-namespace Hoga\la5xunfei;
+namespace Hoga\la5xunfei\Contracts;
 
 use Hoga\la5xunfei\Tools\CacheTools;
 use Hoga\la5xunfei\Exceptions\LocalCacheException;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Hoga\la5xunfei;
+namespace Hoga\la5xunfei\Contracts;
 
 use App\Models\NewRetailXunFeiYun;
 use Hoga\la5xunfei\Tools\ArrayTools;

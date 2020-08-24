@@ -4,7 +4,7 @@
 namespace Hoga\la5xunfei\Tools;
 
 
-use Hoga\la5xunfei\MyCurlFile;
+use Hoga\la5xunfei\Contracts\MyCurlFile;
 use Hoga\la5xunfei\Exceptions\InvalidArgumentException;
 use Hoga\la5xunfei\Exceptions\InvalidResponseException;
 use Hoga\la5xunfei\Exceptions\LocalCacheException;
