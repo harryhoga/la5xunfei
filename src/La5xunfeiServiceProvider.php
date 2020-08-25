@@ -17,7 +17,7 @@ class La5xunfeiServiceProvider extends ServiceProvider
                 [
                     __DIR__ . '\..\config\xunfei.php' => config_path('xunfei.php'),
                 ],
-                'la5xunfei'
+                'config'
             );
         }
     }
