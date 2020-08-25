@@ -8,7 +8,7 @@ use WebSocket\Client;
 use Hoga\la5xunfei\Exceptions\InvalidResponseException;
 use Hoga\la5xunfei\Exceptions\LocalCacheException;
 use Hoga\la5xunfei\Contracts\BaseXunFeiYun;
-
+use Illuminate\Support\Facades\Storage;
 
 class TTS extends BaseXunFeiYun
 {
@@ -69,74 +69,65 @@ class TTS extends BaseXunFeiYun
     //拼接要发送的信息
     $message = self::createMsgData($app_id, $content);
 
-    try {
-      $client->send(json_encode($message, true));
-      $date      = date('YmdHis', time());
-      $file_name = $date . '.mp3';
-      // $new_file_name = $date . '.wav';
-      // todo 判断文件夹是否存在
-      $path_folder = $this->config->get('file_save_dir') ?? public_path('upld/audio/');
-      // dd($path_folder);
-      if (!is_dir($path_folder)) {
-        mkdir($path_folder, 0777, true);
-      }
-      $save_path   = $path_folder . $file_name;
-      $audio_file = fopen($save_path, 'ab');
-      $response   = $client->receive();
-      $response   = json_decode($response, true);
-      p('response');
-      p($response);
-      do {
-        if ($response['code']) {
-          return $response;
-        }
-        $audio = base64_decode($response['data']['audio']);
-        fwrite($audio_file, $audio);
-        $response = $client->receive();
-        p('response');
-        p($response);
-        $response = json_decode($response, true);
-        if ($response['data']['status'] == 2) {
-          $audio = base64_decode($response['data']['audio']);
-          fwrite($audio_file, $audio);
-        }
-      } while ($response['data']['status'] != 2);
-      dd($file_name);
-      fclose($audio_file);
-      p('audio_file');
-      p($audio_file);
-      p('save_path');
-      p($save_path);
-
-      $new_save_path = str_replace('pcm', 'wav', $save_path);
-      dd($new_save_path);
-      if (file_exists($save_path)) {
-        // linux
-        if (PATH_SEPARATOR == ':') {
-          $ffmpeg_path = config('xfyun.tts.ffmpeg_config.linux_path');
-          //windows
-        } else {
-          $ffmpeg_path = config('xfyun.tts.ffmpeg_config.window_path');
-        }
-        exec($ffmpeg_path . config('xfyun.tts.ffmpeg_config.instruct') . $save_path . ' ' . $new_save_path);
-      }
-      return [
-        'code' => 0,
-        'msg'  => '合成成功',
-        'data' => [
-          'audio_name' => $new_file_name,
-          'audio_url'  => $new_save_path,
-        ]
-      ];
-    } catch (\Exception $e) {
-      dd($e);
-      return [
-        'code' => -1,
-        'msg'  => $e->getMessage(),
-      ];
-    } finally {
-      $client->close();
+    // try {
+    $client->send(json_encode($message, true));
+    $date      = date('YmdHis', time());
+    $file_name = $date . '.mp3';
+    $path_folder = $this->config->get('file_save_dir') ?? public_path('upld/audio/');
+    if (!is_dir($path_folder)) {
+      mkdir($path_folder, 0777, true);
     }
+    $save_path   = $path_folder . $file_name;
+    $audio_file = fopen($save_path, 'ab');
+
+    $ced = 0;
+    while (true) {
+      try {
+        $response = $client->receive();
+        // p('response' . $i . '\n');
+        // p($response);
+        // p('\n');
+        // $i++;
+        if ($response) {
+          $response = json_decode($response, true);
+          if (isset($response['data'])) {
+            if ($response['data']['status'] == 1) {
+              $audio = base64_decode($response['data']['audio']);
+              $ced = $response['data']['ced'];
+              fwrite($audio_file, $audio);
+            } else if ($response['data']['status'] == 2) {
+              $audio = base64_decode($response['data']['audio']);
+              $ced = $response['data']['ced'];
+              fwrite($audio_file, $audio);
+              break;
+            }
+          }
+        }
+      } catch (\Exception $e) {
+        break;
+      }
+    }
+    $client->close();
+
+
+    return [
+      'code' => 0,
+      'msg'  => '合成成功',
+      'data' => [
+        'ced' => $ced,
+        'audio_name' => public_path('upld/audio/') . $file_name,
+        'audio_url'  => Storage::url('audio') . '/' . $file_name,
+      ]
+    ];
+    // } catch (\Exception $e) {
+    //   dd($e);
+    //   return [
+    //     'code' => -1,
+    //     'msg'  => $e->getMessage(),
+    //   ];
+    // } finally {
+    //   $client->close();
+    // }
   }
 
 
@@ -148,7 +139,7 @@ class TTS extends BaseXunFeiYun
    */
   public static function createMsgData($app_id, $draft_content)
   {
-    $business_config =  config('xfyun.tts.business') ?? [];
+    $business_config =  config('xunfei.tts.business') ?? [];
     return [
       'common'   => [
         'app_id' => $app_id,
