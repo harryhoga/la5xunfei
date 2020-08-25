@@ -1,11 +1,11 @@
 <?php
 
 
-namespace hoga\la5xunfei\Exceptions;
+namespace Hoga\la5xunfei\Exceptions;
 
 /**加载类异常
  * Class InvalidInstanceException
- * @package hoga\la5xunfei\Exceptions
+ * @package Hoga\la5xunfei\Exceptions
  */
 class InvalidInstanceException extends \Exception
 {

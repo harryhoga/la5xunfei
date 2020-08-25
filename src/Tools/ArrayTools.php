@@ -1,7 +1,7 @@
 <?php
 
 
-namespace hoga\la5xunfei\Tools;
+namespace Hoga\la5xunfei\Tools;
 
 use ArrayAccess;
 

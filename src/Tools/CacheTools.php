@@ -1,10 +1,10 @@
 <?php
 
 
-namespace hoga\la5xunfei\Tools;
+namespace Hoga\la5xunfei\Tools;
 
 
-use XunFeiYun\Exceptions\LocalCacheException;
+use hoga\la5xunfei\Exceptions\LocalCacheException;
 
 class CacheTools
 {

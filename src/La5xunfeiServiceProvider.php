@@ -1,6 +1,6 @@
 <?php
 
-namespace hoga\la5xunfei;
+namespace Hoga\la5xunfei;
 
 use Illuminate\Support\ServiceProvider;
 

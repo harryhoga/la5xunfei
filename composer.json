@@ -16,7 +16,7 @@
     "autoload": {
         "classmap": [],
         "psr-4": {
-            "hoga\\la5xunfei\\": "src/"
+            "Hoga\\la5xunfei\\": "src/"
         }
     },
     "keywords": [
@@ -27,7 +27,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "hoga\\la5xunfei\\La5xunfeiServiceProvider"
+                "Hoga\\la5xunfei\\La5xunfeiServiceProvider"
             ],
             "aliases": {}
         }
