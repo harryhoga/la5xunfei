@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Hoga\la5xunfei\Tools;
+namespace hoga\la5xunfei\Tools;
 
 
-use Hoga\la5xunfei\Contracts\MyCurlFile;
-use Hoga\la5xunfei\Exceptions\InvalidArgumentException;
-use Hoga\la5xunfei\Exceptions\InvalidResponseException;
-use Hoga\la5xunfei\Exceptions\LocalCacheException;
+use hoga\la5xunfei\Contracts\MyCurlFile;
+use hoga\la5xunfei\Exceptions\InvalidArgumentException;
+use hoga\la5xunfei\Exceptions\InvalidResponseException;
+use hoga\la5xunfei\Exceptions\LocalCacheException;
 
 class HttpTools
 {
@@ -104,7 +104,7 @@ class HttpTools
       $build = false;
     } elseif (is_object($value) && isset($value->datatype) && $value->datatype === 'MY_CURL_FILE') {
       $build = false;
-      $mycurl = new \Hoga\la5xunfei\Contracts\MyCurlFile((array)$value);
+      $mycurl = new \hoga\la5xunfei\Contracts\MyCurlFile((array)$value);
       $data[$key] = $mycurl->get();
       array_push(CacheTools::$cache_curl, $mycurl->tempname);
     } elseif (is_string($value) && class_exists('CURLFile', false) && stripos($value, '@') === 0) {

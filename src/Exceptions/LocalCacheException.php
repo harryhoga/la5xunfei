@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Hoga\la5xunfei\Exceptions;
+namespace hoga\la5xunfei\Exceptions;
 
 /**本地缓存异常
  * Class LocalCacheException
- * @package Hoga\la5xunfei\Exceptions
+ * @package hoga\la5xunfei\Exceptions
  */
 class LocalCacheException extends \Exception
 {

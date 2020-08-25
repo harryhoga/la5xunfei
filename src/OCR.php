@@ -2,9 +2,9 @@
 
 
 
-namespace Hoga\la5xunfei;
+namespace hoga\la5xunfei;
 
-use Hoga\la5xunfei\Contracts\BaseXunFeiYun;
+use hoga\la5xunfei\Contracts\BaseXunFeiYun;
 
 
 class OCR extends BaseXunFeiYun

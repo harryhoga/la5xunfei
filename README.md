@@ -4,4 +4,4 @@
 
 composer require hoga/la5xunfei --prefer-dist
 
-php artisan vendor:publish --provider=Hoga\la5xunfei\La5xunfeiServiceProvider --tag=config
+php artisan vendor:publish --provider=hoga\la5xunfei\La5xunfeiServiceProvider --tag=config

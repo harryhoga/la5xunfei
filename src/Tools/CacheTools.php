@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Hoga\la5xunfei\Tools;
+namespace hoga\la5xunfei\Tools;
 
 
 use XunFeiYun\Exceptions\LocalCacheException;

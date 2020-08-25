@@ -16,7 +16,7 @@
     "autoload": {
         "classmap": [],
         "psr-4": {
-            "ChenJiaJing\\XunFeiYun\\": "src/"
+            "hoga\\la5xunfei\\": "src/"
         }
     },
     "keywords": [
@@ -26,13 +26,13 @@
     ],
     "autoload-dev": {
         "psr-4": {
-            "Hoga\\la5xunfei\\Tests\\": "tests/"
+            "hoga\\la5xunfei\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Hoga\\la5xunfei\\La5xunfeiServiceProvider"
+                "hoga\\la5xunfei\\La5xunfeiServiceProvider"
             ],
             "aliases": {}
         }

@@ -1,10 +1,10 @@
 <?php
 
-namespace Hoga\la5xunfei\Exceptions;
+namespace hoga\la5xunfei\Exceptions;
 
 /**加密解密异常
  * Class InvalidDecryptException
- * @package Hoga\la5xunfei\Exceptions
+ * @package hoga\la5xunfei\Exceptions
  */
 class InvalidDecryptException extends \Exception
 {

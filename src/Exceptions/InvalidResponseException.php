@@ -2,11 +2,11 @@
 
 
 
-namespace Hoga\la5xunfei\Exceptions;
+namespace hoga\la5xunfei\Exceptions;
 
 /**返回异常
  * Class InvalidResponseException
- * @package Hoga\la5xunfei\Exceptions
+ * @package hoga\la5xunfei\Exceptions
  */
 class InvalidResponseException extends \Exception
 {
