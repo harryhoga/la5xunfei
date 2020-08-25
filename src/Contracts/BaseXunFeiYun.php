@@ -1,14 +1,14 @@
 <?php
 
-namespace Hoga\la5xunfei\Contracts;
+namespace Hoga\La5xunfei\Contracts;
 
-use Hoga\la5xunfei\Tools\ArrayTools;
-use Hoga\la5xunfei\Tools\CacheTools;
-use Hoga\la5xunfei\Tools\HttpTools;
+use Hoga\La5xunfei\Tools\ArrayTools;
+use Hoga\La5xunfei\Tools\CacheTools;
+use Hoga\La5xunfei\Tools\HttpTools;
 use WebSocket\Client;
-use Hoga\la5xunfei\Exceptions\InvalidArgumentException;
-use Hoga\la5xunfei\Exceptions\InvalidResponseException;
-use Hoga\la5xunfei\Exceptions\LocalCacheException;
+use Hoga\La5xunfei\Exceptions\InvalidArgumentException;
+use Hoga\La5xunfei\Exceptions\InvalidResponseException;
+use Hoga\La5xunfei\Exceptions\LocalCacheException;
 
 class BaseXunFeiYun
 {

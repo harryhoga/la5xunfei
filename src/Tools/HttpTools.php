@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Hoga\la5xunfei\Tools;
+namespace Hoga\La5xunfei\Tools;
 
 
-use Hoga\la5xunfei\Contracts\MyCurlFile;
-use Hoga\la5xunfei\Exceptions\InvalidArgumentException;
-use Hoga\la5xunfei\Exceptions\InvalidResponseException;
-use Hoga\la5xunfei\Exceptions\LocalCacheException;
+use Hoga\La5xunfei\Contracts\MyCurlFile;
+use Hoga\La5xunfei\Exceptions\InvalidArgumentException;
+use Hoga\La5xunfei\Exceptions\InvalidResponseException;
+use Hoga\La5xunfei\Exceptions\LocalCacheException;
 
 class HttpTools
 {

@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Hoga\la5xunfei\Exceptions;
+namespace Hoga\La5xunfei\Exceptions;
 
 /**接口参数异常
  * Class InvalidArgumentException
- * @package Hoga\la5xunfei\Exceptions
+ * @package Hoga\La5xunfei\Exceptions
  */
 class InvalidArgumentException extends \InvalidArgumentException
 {

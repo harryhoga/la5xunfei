@@ -1,13 +1,13 @@
 <?php
 
-namespace Hoga\la5xunfei\Contracts;
+namespace Hoga\La5xunfei\Contracts;
 
-use Hoga\la5xunfei\Tools\CacheTools;
-use Hoga\la5xunfei\Exceptions\LocalCacheException;
+use Hoga\La5xunfei\Tools\CacheTools;
+use Hoga\La5xunfei\Exceptions\LocalCacheException;
 
 /**自定义CURL文件类
  * Class MyCurlFile
- * @package Hoga\la5xunfei
+ * @package Hoga\La5xunfei
  */
 class MyCurlFile extends \stdClass
 {

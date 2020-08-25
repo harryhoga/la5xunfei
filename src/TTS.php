@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Hoga\la5xunfei;
+namespace Hoga\La5xunfei;
 
 
 use WebSocket\Client;
-use Hoga\la5xunfei\Exceptions\InvalidResponseException;
-use Hoga\la5xunfei\Exceptions\LocalCacheException;
-use Hoga\la5xunfei\Contracts\BaseXunFeiYun;
+use Hoga\La5xunfei\Exceptions\InvalidResponseException;
+use Hoga\La5xunfei\Exceptions\LocalCacheException;
+use Hoga\La5xunfei\Contracts\BaseXunFeiYun;
 use Illuminate\Support\Facades\Storage;
 
 class TTS extends BaseXunFeiYun
