@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "textalk/websocket": "1.4.*"
+        "textalk/websocket": "^1.4"
     },
     "autoload": {
         "classmap": [],
