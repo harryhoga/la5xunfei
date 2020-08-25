@@ -24,11 +24,6 @@
         "xunfei",
         "laravel"
     ],
-    "autoload-dev": {
-        "psr-4": {
-            "hoga\\la5xunfei\\Tests\\": "tests/"
-        }
-    },
     "extra": {
         "laravel": {
             "providers": [
