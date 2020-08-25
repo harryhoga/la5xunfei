@@ -2,7 +2,7 @@
     "name": "hoga/la5xunfei",
     "description": "这是一个laravel讯飞sdk封装",
     "license": "MIT",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "homepage": "https://github.com/harryhoga/la5xunfei",
     "authors": [
         {
@@ -26,7 +26,7 @@
     ],
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.1-dev"
+            "dev-master": "1.0.2-dev"
         },
         "laravel": {
             "providers": [],
