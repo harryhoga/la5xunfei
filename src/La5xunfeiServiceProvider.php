@@ -13,12 +13,11 @@ class La5xunfeiServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            dd($this);
             $this->publishes(
                 [
-                    public_path('vendor/hoga/la5xunfei/config/xunfei.php') => config_path('xunfei.php'),
+                    __DIR__ . '\..\config\xunfei.php' => config_path('xunfei.php'),
                 ],
-                'config'
+                'la5xunfei'
             );
         }
     }

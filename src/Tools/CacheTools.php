@@ -4,7 +4,7 @@
 namespace Hoga\la5xunfei\Tools;
 
 
-use hoga\la5xunfei\Exceptions\LocalCacheException;
+use Hoga\la5xunfei\Exceptions\LocalCacheException;
 
 class CacheTools
 {

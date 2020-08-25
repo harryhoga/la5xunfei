@@ -1,7 +1,2 @@
 # la5xunfei
-
-这是一个 laravel 讯飞 sdk 封装
-
-composer require hoga/la5xunfei --prefer-dist
-
-php artisan vendor:publish --provider=hoga\la5xunfei\La5xunfeiServiceProvider --tag=config
+这是一个laravel讯飞sdk封装
